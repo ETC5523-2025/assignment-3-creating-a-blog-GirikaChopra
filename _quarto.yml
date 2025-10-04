@@ -2,16 +2,23 @@ project:
   type: website
 
 website:
-  title: "blog-template"
+  title: "Girika’s Data Blog"
   navbar:
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "About"
+        file: about.qmd
     right:
-      - about.qmd
       - icon: github
-        href: https://github.com/etc5523-2022
+        aria-label: GitHub
+        href: https://github.com/ETC5523-2025/assignment-3-creating-a-blog-GirikaChopra
+
 format:
   html:
     theme: cosmo
     css: styles.css
+
 
 
 

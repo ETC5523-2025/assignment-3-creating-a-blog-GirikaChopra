@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ETC5523 Blog Assessment",
+    "section": "",
+    "text": "Welcome To My Blog Template\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 18, 2022\n\n\nEmi Tanaka\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog Template",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "GIRIKA",
+    "section": "",
+    "text": "This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.\nHi, I’m Girika (Master of Business Analytics, Monash). I translate technical analyses into clear stories using R, Quarto, and the tidyverse. My current work includes turning an Assignment 2 analysis on nitrate patterns from routine water-quality sensors into an accessible blog post for broader audiences.\nInterests: communicating with data, uncertainty, reproducibility\nTools: R, Quarto,Excel, GitHub\n\nGitHub LinkedIn"
+  }
+]

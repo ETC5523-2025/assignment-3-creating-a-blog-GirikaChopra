@@ -7,15 +7,21 @@ about:
     - icon: github
       text: Github
       href: https://github.com/GirikaChopra
-
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/girika-3641801b8/
 ---
 
-Hi, I’m **Girika** (Master of Business Analytics, Monash). I translate technical analyses into clear stories using R, Quarto, and the tidyverse. My current work includes turning an Assignment 2 analysis on nitrate patterns from routine water-quality sensors into an accessible blog post for broader audiences.
+Hi, I’m **Girika** — a **Master of Business Analytics student at Monash University**.  
+I translate technical analyses into clear stories using R, Quarto, Excel and the tidyverse. This site turns my 
 
-**Interests:** communicating with data, uncertainty, reproducibility,visualisation  
+**Assignment 2 nitrate analysis** into an accessible blog post for broader audiences.
+
+**Interests:** communicating with data, uncertainty, reproducibility,visualisation 
+
 **Tools:** R, Quarto,Excel, GitHub
 
-::: {.btn-group}
-[GitHub](https://github.com/GirikaChopra){.btn .btn-primary}
-[LinkedIn](https://www.linkedin.com/in/girika-3641801b8/){.btn .btn-secondary}
-:::
+**Workflow:** version control, literate programming, clean figure/table design with captions & cross-references
+
+**Part-time Associate:**  Support prospective students with application preparation and documentation, maintain accurate CRM records, and also coordinate timelines between students, institutions, and internal teams. Contribute to data-driven insights for process improvements.
+

@@ -1,13 +1,24 @@
 ---
-title: "About"
+title: "GIRIKA"
 image: profile.jpg
 about:
   template: jolla
   links:
     - icon: github
       text: Github
-      href: https://github.com/etc5523-2022
+      href: https://github.com/ETC5523-2025/assignment-3-creating-a-blog-GirikaChopra
 
 ---
 
 This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
+
+
+Hi, I’m **Girika** (Master of Business Analytics, Monash). I translate technical analyses into clear stories using R, Quarto, and the tidyverse. My current work includes turning an Assignment 2 analysis on nitrate patterns from routine water-quality sensors into an accessible blog post for broader audiences.
+
+Interests: communicating with data, uncertainty, reproducibility  
+**Tools:** R, Quarto,Excel, GitHub
+
+::: {.btn-group}
+[GitHub](https://github.com/GirikaChopra){.btn .btn-primary}
+[LinkedIn](https://www.linkedin.com/in/girika-3641801b8/){.btn .btn-secondary}
+:::

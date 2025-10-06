@@ -118,3 +118,9 @@ blockquote{
 .page-content img[alt="profile.jpg"], .quarto-figure img[alt="profile.jpg"]{
   border-radius: 999px !important;
 }
+/* Remove white card around figures */
+.quarto-figure .figure, .figure.figure {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}

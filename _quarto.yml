@@ -16,9 +16,9 @@ website:
 
 format:
   html:
-    theme: quartz
+    theme:
+      light: zephyr
+      dark: vapor
     css: styles.css
-
-
 
 

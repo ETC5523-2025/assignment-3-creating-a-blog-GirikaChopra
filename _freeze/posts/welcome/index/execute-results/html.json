@@ -1,0 +1,21 @@
+{
+  "hash": "4b0f10a56a9c7989cf72ef04143ac63d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome To My Blog Template\"\nauthor: \"Girika\"\ndate: \"2022-07-18\"\ncategories: [news]\nbibliography: references.bib\n---\n\n\n\n## Problem\n\nNitrate supports aquatic life at natural levels but in excess drives algal blooms and hypoxia. Managers need a **quick way** to know *when* nitrate spikes and whether **routine sensors** (conductivity, turbidity, dissolved oxygen, temperature, stage) can stand in for expensive nitrate probes.\n\nThis post **recasts my Assignment 2 analysis** into an accessible summary: one clear figure, one compact table, and a practical takeaway.\n\n\n## Analysis\n\n**Data source.** NEON river sites — Arikaree (CO), Caribou (AK), Lewis Run (VA); nitrate by **SUNA V2** (~15-min), with routine sensors at similar cadence.\n\n**Approach** In A2 I fitted **GAMMs** linking nitrate to routine sensors and time structure. For the blog: one clear **figure** + one **table** and what they mean.\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![Nitrate contrasts by site (median, µM).](index_files/figure-html/fig-nitrate-1.png){#fig-nitrate width=672}\n:::\n:::\n\n::: {#tbl-nitrate .cell tbl-cap='Compact summary of site medians (µM), days measured, and share of total.'}\n::: {.cell-output-display}\n`````{=html}\n<table class=\"table table-condensed table-striped\" style=\"width: auto !important; margin-left: auto; margin-right: auto;\">\n <thead>\n  <tr>\n   <th style=\"text-align:left;font-weight: bold;color: rgba(139, 92, 246, 255) !important;background-color: rgba(253, 231, 245, 255) !important;\"> Site </th>\n   <th style=\"text-align:right;font-weight: bold;color: rgba(139, 92, 246, 255) !important;background-color: rgba(253, 231, 245, 255) !important;\"> Median (µM) </th>\n   <th style=\"text-align:right;font-weight: bold;color: rgba(139, 92, 246, 255) !important;background-color: rgba(253, 231, 245, 255) !important;\"> Days measured </th>\n   <th style=\"text-align:right;font-weight: bold;color: rgba(139, 92, 246, 255) !important;background-color: rgba(253, 231, 245, 255) !important;\"> High days </th>\n   <th style=\"text-align:right;font-weight: bold;color: rgba(139, 92, 246, 255) !important;background-color: rgba(253, 231, 245, 255) !important;\"> Share of total </th>\n  </tr>\n </thead>\n<tbody>\n  <tr>\n   <td style=\"text-align:left;\"> Arikaree (CO) </td>\n   <td style=\"text-align:right;\"> 5.5 </td>\n   <td style=\"text-align:right;\"> 120 </td>\n   <td style=\"text-align:right;\"> 18% </td>\n   <td style=\"text-align:right;\"> 2% </td>\n  </tr>\n  <tr>\n   <td style=\"text-align:left;\"> Caribou (AK) </td>\n   <td style=\"text-align:right;\"> 28.4 </td>\n   <td style=\"text-align:right;\"> 110 </td>\n   <td style=\"text-align:right;\"> 5% </td>\n   <td style=\"text-align:right;\"> 13% </td>\n  </tr>\n  <tr>\n   <td style=\"text-align:left;\"> Lewis Run (VA) </td>\n   <td style=\"text-align:right;\"> 192.0 </td>\n   <td style=\"text-align:right;\"> 118 </td>\n   <td style=\"text-align:right;\"> 26% </td>\n   <td style=\"text-align:right;\"> 85% </td>\n  </tr>\n</tbody>\n</table>\n\n`````\n:::\n:::\n\n\n\n\n\n\nbibliography: references.bib[@kermorvant2023]\n\n\n\n\n\n\n\n\n![](thumbnail.jpg)\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"../../site_libs/kePrint-0.0.1/kePrint.js\"></script>\n<link href=\"../../site_libs/lightable-0.0.1/lightable.css\" rel=\"stylesheet\" />\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

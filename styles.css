@@ -1,4 +1,120 @@
-/* css styles */
-.navbar-dark, .quarto-title-banner {
-  background-color: #006DAE;
+
+/*  Palette  */
+:root{
+  --brand: #8b5cf6;   /* violet */
+  --brand-2: #fde7f5; /* blush wash */
+  --ink: #1f1636;     /* deep eggplant text */
+  --muted: #6b5e7a;   /* muted plum */
+  --ring: #f0abfc;    /* orchid focus */
+}
+
+/*  Global type & spacing  */
+html{ scroll-behavior: smooth; }
+body{ line-height: 1.65; color: var(--ink); }
+p{ margin: 0 0 0.9rem; }
+h1,h2,h3{ letter-spacing: .2px; }
+
+/*  Links & buttons  */
+a{ color: var(--brand); }
+a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
+.btn, .btn-primary{
+  border-radius: .75rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+.btn-primary, .btn.btn-primary{
+  background: var(--brand); border-color: var(--brand); color:#fff;
+}
+.btn-primary:hover{ filter: brightness(1.05); }
+
+.btn-secondary{
+  background:#ec4899; border-color:#ec4899; color:#fff;
+}
+.btn-secondary:hover{ filter: brightness(1.05); }
+
+/*  Banner & navbar  */
+.quarto-title-banner, .navbar{
+  background: var(--brand) !important;
+  background-image: linear-gradient(135deg, var(--brand), #d946ef 70%);
+}
+.quarto-title-banner .title, .quarto-title-banner .subtitle{ color:#fff !important; }
+.navbar .navbar-brand, .navbar .nav-link, .navbar a{ color:#fff !important; }
+.navbar .nav-link:hover{ text-decoration: underline; text-underline-offset: 3px; }
+.navbar{ position: sticky; top: 0; z-index: 1000; }
+
+/*  Listing cards on Home  */
+.quarto-listing .listing .quarto-post{
+  border: 1px solid #efe6f7;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.quarto-listing .listing .quarto-post:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, .18);
+  border-color: #e9d5ff;
+}
+.quarto-post .listing-categories .listing-category{
+  background: var(--brand-2);
+  color: var(--brand);
+  border: 0;
+  border-radius: 999px;
+  padding: .15rem .6rem;
+  font-weight: 500;
+}
+
+/*  High-contrast categories (chips + sidebar)  */
+/* Post tag chip (e.g., "news") */
+.listing-category,
+.quarto-post .listing-categories .listing-category{
+  background: #ffffff !important;
+  color: var(--brand) !important;
+  border: 1px solid #f0abfc;
+  border-radius: 999px;
+  padding: .18rem .55rem;
+  font-weight: 600;
+}
+/* Sidebar "Categories" title + links */
+.quarto-listing .categories .category-title,
+.quarto-listing .categories a{
+  color: #ffffff !important;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+.quarto-listing .categories a:hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/*  Figures, captions, tables  */
+.quarto-figure img{ border-radius: 10px; }
+.figure-caption{ color: var(--muted); font-size: .95rem; }
+
+table{ border-collapse: separate; border-spacing:0; overflow:hidden; border-radius:12px; }
+thead th{ background: var(--brand-2); color: var(--ink); }
+tbody tr:nth-child(even){ background:#f8f5ff; }
+td, th{ padding:.6rem .75rem; }
+
+/*  Code blocks  */
+pre code{ border-radius:12px; }
+.code-with-filename .code-tools, .code-with-filename .filename{
+  background: var(--brand-2) !important; color: var(--ink) !important;
+}
+
+/*  Blockquotes & focus (accessibility)  */
+blockquote{
+  border-left:4px solid var(--brand);
+  background: #fbf1ff;
+  padding:.6rem .9rem; border-radius:6px;
+}
+:focus-visible{
+  outline: 3px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* round About page photo  */
+.page-content img[alt="profile.jpg"], .quarto-figure img[alt="profile.jpg"]{
+  border-radius: 999px !important;
 }

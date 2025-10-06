@@ -10,12 +10,9 @@ about:
 
 ---
 
-### This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
-
-
 Hi, I’m **Girika** (Master of Business Analytics, Monash). I translate technical analyses into clear stories using R, Quarto, and the tidyverse. My current work includes turning an Assignment 2 analysis on nitrate patterns from routine water-quality sensors into an accessible blog post for broader audiences.
 
-Interests: communicating with data, uncertainty, reproducibility  
+**Interests:** communicating with data, uncertainty, reproducibility,visualisation  
 **Tools:** R, Quarto,Excel, GitHub
 
 ::: {.btn-group}

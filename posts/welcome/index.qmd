@@ -1,72 +1,85 @@
 ---
 title: "When Do Nitrate Levels Spike?"
 author: "Girika"
-date: "2022-07-18"
+date: today
 categories: [news]
 bibliography: references.bib
 ---
 
-## Problem
+## PROBLEM
 
-Nitrate supports aquatic life at natural levels but in excess drives algal blooms and hypoxia. Managers need a **quick way** to know *when* nitrate spikes and whether **routine sensors** (conductivity, turbidity, dissolved oxygen, temperature, stage) can stand in for expensive nitrate probes.
+Excess nitrate damages river health by fuelling algal blooms and lowering dissolved oxygen, especially after storm events when runoff pulses into streams. Continuous nitrate sensors are accurate but costly to purchase, maintain, and clean; many programs therefore rely on cheaper routine sensors (conductivity, turbidity, temperature, dissolved oxygen, stage). The practical question I addressed in Assignment 2 is: can routine sensors, with local calibration, tell us enough to spot nitrate peaks and time our sampling? I also ask where nitrate tends to be higher so limited effort can be focused. This blog translates the technical Assignment2 analysis into a manager-friendly summary with one clear figure and one compact table.*  
 
-This post **recasts my Assignment 2 analysis** into an accessible summary: one clear figure, one compact table, and a practical takeaway.
+## ANALYSIS
+
+**Data source.**
+
+I analysed high-frequency stream records from three **NEON** sites: **Arikaree (CO)** (semi arid, event driven), **Caribou (AK)** (pristine, stable), and **Lewis Run (VA)** (urban agricultural, persistently higher). Nitrate was measured by **SUNA V2** at ~15-minute cadence, alongside routine sensors: specific conductance, turbidity, dissolved oxygen, temperature, and stage. I aligned timestamps to nitrate and removed values flagged by NEON QC. Units for this post are **mg/L as N** for clarity.
+
+**Approach** 
+
+In Assignment 2 I fitted **GAMMs** to capture smooth, nonlinear links between nitrate and routine sensors while modelling temporal autocorrelation. For this blog, I compress the findings into one visual and one table: @fig-nitrate shows typical levels (medians, mg/L as N) by site; @tbl-nitrate adds coverage (days measured), “high day” proportions, and share of the total median. The goal is quick comprehension for decision-makers rather than model details.
 
 
-## Analysis
+**Findings.** 
 
-**Data source.** NEON river sites Arikaree (CO), Caribou (AK), Lewis Run (VA); nitrate by **SUNA V2** (~15-min), with routine sensors at similar cadence.
+Typical nitrate differs sharply across sites: **Lewis Run** is much higher on median, **Caribou** is consistently low, and **Arikaree** is lower on median but **spiky after rainfall** (event driven behaviour). In A2, routine variables especially conductance, temperature, turbidity and stage explained most nitrate variation once temporal structure was included, indicating that calibrated routine sensors can act as reliable proxies for nitrate.
 
-**Approach** In A2 I fitted **GAMMs** linking nitrate to routine sensors and time structure. For the blog: one clear **figure** + one **table** and what they mean.
 
+**Design quality.** 
+
+The figure uses on-brand colours and direct value labels for quick scanning; the table keeps units visible, right aligns numbers for easy comparison, and limits to the few fields needed for decisions.
+Link back to the question. Together, @fig-nitrate and @tbl-nitrate show where nitrate is typically higher (Lewis Run) and when to concentrate effort (post rain windows at Arikaree), which is exactly what managers need to schedule sampling and alerts [@kermorvant2023].
+
+
+The pair of visuals answers *when* and *where* to focus: persistent **higher background** at **Lewis Run** warrants ongoing nitrate checks; **post-rain windows** at **Arikaree** are the prime times for surge sampling; **Caribou’s** stability means routine sensors often suffice. This targeted strategy routine sensor backbone plus short, well timed nitrate measurements addresses the original problem efficiently and aligns with recent evidence that nitrate can be inferred from routine variables across contrasting rivers [@kermorvant2023].
 
 ```{r}
 #| label: fig-nitrate
-#| fig-cap: "Nitrate contrasts by site (median, µM)."
+#| fig-cap: "Nitrate contrasts by site (median, mg/L as N)."
 #| echo: false
 library(ggplot2)
 
-# data 
+
 med <- data.frame(
   site = c("Arikaree (CO)","Caribou (AK)","Lewis Run (VA)"),
-  nitrate_median_uM = c(5.5, 28.4, 192.0)
+  nitrate_median_mgL = c(0.077, 0.398, 2.689)  
 )
 
-# on-brand colours
 violet  <- "#8b5cf6"
 fuchsia <- "#d946ef"
-ink     <- "#1f1636"   # axis/text colour
-panel   <- "#fde7f5"   # soft blush panel
-grid    <- "#ffffff66" # light grid
 
-ggplot(med, aes(x = reorder(site, nitrate_median_uM),
-                y = nitrate_median_uM)) +
-  geom_segment(aes(xend = site, y = 0, yend = nitrate_median_uM),
+ggplot(med, aes(x = reorder(site, nitrate_median_mgL),
+                y = nitrate_median_mgL)) +
+  geom_segment(aes(xend = site, y = 0, yend = nitrate_median_mgL),
                linewidth = 2.2, colour = violet, alpha = .85) +
   geom_point(size = 6, colour = "white",
              fill = fuchsia, shape = 21, stroke = 2) +
-  geom_text(aes(label = nitrate_median_uM),
-            vjust = -0.9, size = 4, colour = ink) +
-  coord_cartesian(ylim = c(0, max(med$nitrate_median_uM) * 1.12)) +
-  labs(x = NULL, y = "Median nitrate (µM)") +
+  geom_text(aes(label = scales::number(nitrate_median_mgL, accuracy = 0.001)),
+            vjust = -0.9, size = 4, colour = "#000") +
+  coord_cartesian(ylim = c(0, max(med$nitrate_median_mgL) * 1.12)) +
+  labs(x = NULL, y = "Nitrate (mg/L as N)") +
   theme_minimal(base_size = 13) +
   theme(
-    panel.background = element_rect(fill = panel, color = NA),
+    panel.background = element_rect(fill = "#fde7f5", color = NA),
     plot.background  = element_rect(fill = "transparent", color = NA),
-    panel.grid.major = element_line(color = grid),
+    panel.grid.major = element_line(color = "#ffffff66"),
     panel.grid.minor = element_blank(),
-    axis.title       = element_text(color = ink),
-    axis.text        = element_text(color = ink)
+    axis.title       = element_text(color = "#000"),
+    axis.text        = element_text(color = "#000"),
+    axis.line        = element_line(color = "#000"),
+    axis.ticks       = element_line(color = "#000")
   )
+
 
 ```
 
-Reading @fig-nitrate. Lewis Run’s median nitrate dwarfs the others; Caribou is low and steady; Arikaree is lower on median but more event-driven. This points to where risk is persistent and when to prioritise targeted sampling (e.g., post-rain windows).
+@fig-nitrate shows medians only (no clutter) so differences are obvious at a glance. On-brand colours separate sites, value labels sit just above points, and axes are kept simple with units shown on the y-axis. A soft background panel improves contrast with the page while black axis/tick styling maintains readability.
 
 
 ```{r}
 #| label: tbl-nitrate
-#| tbl-cap: "Compact summary of site medians (µM), days measured, and share of total."
+#| tbl-cap: "Compact summary of site medians (mg/L as N), days measured, and share of total."
 #| echo: false
 #| message: false
 #| warning: false
@@ -74,25 +87,24 @@ library(tibble)
 library(dplyr)
 library(scales)
 
-violet <- "#8b5cf6"   
-blush  <- "#fde7f5"   
+violet <- "#8b5cf6"
+blush  <- "#fde7f5"
 
 tbl <- tibble(
   site          = c("Arikaree (CO)", "Caribou (AK)", "Lewis Run (VA)"),
-  median_uM     = c(5.5, 28.4, 192.0),
+  median_mgL    = c(0.077, 0.398, 2.689),   
   days_measured = c(120, 110, 118),
-  pct_high_days = c(0.18, 0.05, 0.26)   
+  pct_high_days = c(0.18, 0.05, 0.26)      
 ) |>
-  mutate(share_of_total = median_uM / sum(median_uM)) |>
+  mutate(share_of_total = median_mgL / sum(median_mgL)) |>
   transmute(
     Site = site,
-    `Median (µM)`   = number(median_uM, accuracy = 0.1),
-    `Days measured` = days_measured,
-    `High days`     = percent(pct_high_days, accuracy = 1),
-    `Share of total`= percent(share_of_total, accuracy = 1)
+    `Median (mg/L as N)` = number(median_mgL, accuracy = 0.001),
+    `Days measured`       = days_measured,
+    `High days`           = percent(pct_high_days, accuracy = 1),
+    `Share of total`      = percent(share_of_total, accuracy = 1)
   )
 
-#pretty table
 if (requireNamespace("kableExtra", quietly = TRUE)) {
   knitr::kable(tbl, align = c("l","r","r","r","r")) |>
     kableExtra::kable_styling(full_width = FALSE, bootstrap_options = c("condensed","striped")) |>
@@ -101,18 +113,16 @@ if (requireNamespace("kableExtra", quietly = TRUE)) {
   knitr::kable(tbl, align = c("l","r","r","r","r"))
 }
 
-
 ```
 
 
-Reading @tbl-nitrate. The numbers mirror @fig-nitrate and support a targeted monitoring plan: keep routine sensors everywhere; add nitrate-specific effort at higher-risk sites/times.
+@tbl-nitrate provides just the decision-relevant fields: median nitrate (with units), days measured (coverage), an easy “high-day” percentage, and the share of total. Numbers are right-aligned for scanning; headers include units; the caption is concise so readers know exactly what they’re looking at without hunting in the text.
 
 Why routine sensors matter (A2). In my Assignment 2 models, a small, consistent set of routine variables captured most of the signal for nitrate; once temporal structure is included, fit was extremely high. That means managers can rely on calibrated routine sensors as a cost-effective backbone, using nitrate probes for calibration and hotspots.
 
-## Conclusion
+## CONCLUSION
 
-Short, event-driven nitrate episodes drive most risk. Use routine sensors everywhere, calibrate locally, and concentrate extra effort around likely peak windows. This communication-first summary complements the technical A2 report and aligns with literature showing nitrate can be inferred from routine variables across contrasting rivers [@kermorvant2023].
-
+This analysis shows clear site contrasts: **Lewis Run** has persistently higher nitrate, while **Caribou** is low and **Arikaree** is lower on median but **spikes after rainfall**. The simple visuals @fig-nitrate (medians in mg/L as N) and @tbl-nitrate (coverage, share, and “high-day” proportions)—let managers see both **where** nitrate is typically higher and **when** to intensify effort. Practically, keep routine sensors at all sites and **calibrate locally** to nitrate; prioritise continuous nitrate checks at **Lewis Run**, and schedule **post-rain surge sampling** at **Arikaree**. At **Caribou**, routine sensors will often suffice outside unusual events. These recommendations align with my Assignment 2 modelling (routine variables explain most nitrate variation with temporal structure) and with recent literature that supports nitrate inference from routine sensors [@kermorvant2023]. Overall, a **targeted monitoring strategy**—routine-sensor backbone plus short, well-timed nitrate measurements—delivers better information at lower cost and answers the original question.
 
 bibliography: references.bib[@kermorvant2023]
 

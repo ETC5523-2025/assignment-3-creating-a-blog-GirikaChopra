@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Girika">
-<meta name="dcterms.date" content="2022-07-18">
+<meta name="dcterms.date" content="2025-10-07">
 
 <title>When Do Nitrate Levels Spike? – Girika’s Data Blog</title>
 <style>
@@ -161,7 +161,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 18, 2022</p>
+        <p class="date">October 7, 2025</p>
       </div>
     </div>
     
@@ -181,14 +181,20 @@ div.csl-indent {
 
 
 <section id="problem" class="level2">
-<h2 class="anchored" data-anchor-id="problem">Problem</h2>
-<p>Nitrate supports aquatic life at natural levels but in excess drives algal blooms and hypoxia. Managers need a <strong>quick way</strong> to know <em>when</em> nitrate spikes and whether <strong>routine sensors</strong> (conductivity, turbidity, dissolved oxygen, temperature, stage) can stand in for expensive nitrate probes.</p>
-<p>This post <strong>recasts my Assignment 2 analysis</strong> into an accessible summary: one clear figure, one compact table, and a practical takeaway.</p>
+<h2 class="anchored" data-anchor-id="problem">PROBLEM</h2>
+<p>Excess nitrate damages river health by fuelling algal blooms and lowering dissolved oxygen, especially after storm events when runoff pulses into streams. Continuous nitrate sensors are accurate but costly to purchase, maintain, and clean; many programs therefore rely on cheaper routine sensors (conductivity, turbidity, temperature, dissolved oxygen, stage). The practical question I addressed in Assignment 2 is: can routine sensors, with local calibration, tell us enough to spot nitrate peaks and time our sampling? I also ask where nitrate tends to be higher so limited effort can be focused. This blog translates the technical Assignment2 analysis into a manager-friendly summary with one clear figure and one compact table.*</p>
 </section>
 <section id="analysis" class="level2">
-<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
-<p><strong>Data source.</strong> NEON river sites — Arikaree (CO), Caribou (AK), Lewis Run (VA); nitrate by <strong>SUNA V2</strong> (~15-min), with routine sensors at similar cadence.</p>
-<p><strong>Approach</strong> In A2 I fitted <strong>GAMMs</strong> linking nitrate to routine sensors and time structure. For the blog: one clear <strong>figure</strong> + one <strong>table</strong> and what they mean.</p>
+<h2 class="anchored" data-anchor-id="analysis">ANALYSIS</h2>
+<p><strong>Data source.</strong></p>
+<p>I analysed high-frequency stream records from three <strong>NEON</strong> sites: <strong>Arikaree (CO)</strong> (semi arid, event driven), <strong>Caribou (AK)</strong> (pristine, stable), and <strong>Lewis Run (VA)</strong> (urban agricultural, persistently higher). Nitrate was measured by <strong>SUNA V2</strong> at ~15-minute cadence, alongside routine sensors: specific conductance, turbidity, dissolved oxygen, temperature, and stage. I aligned timestamps to nitrate and removed values flagged by NEON QC. Units for this post are <strong>mg/L as N</strong> for clarity.</p>
+<p><strong>Approach</strong></p>
+<p>In Assignment 2 I fitted <strong>GAMMs</strong> to capture smooth, nonlinear links between nitrate and routine sensors while modelling temporal autocorrelation. For this blog, I compress the findings into one visual and one table: <a href="#fig-nitrate" class="quarto-xref">Figure&nbsp;1</a> shows typical levels (medians, mg/L as N) by site; <a href="#tbl-nitrate" class="quarto-xref">Table&nbsp;1</a> adds coverage (days measured), “high day” proportions, and share of the total median. The goal is quick comprehension for decision-makers rather than model details.</p>
+<p><strong>Findings.</strong></p>
+<p>Typical nitrate differs sharply across sites: <strong>Lewis Run</strong> is much higher on median, <strong>Caribou</strong> is consistently low, and <strong>Arikaree</strong> is lower on median but <strong>spiky after rainfall</strong> (event driven behaviour). In A2, routine variables especially conductance, temperature, turbidity and stage explained most nitrate variation once temporal structure was included, indicating that calibrated routine sensors can act as reliable proxies for nitrate.</p>
+<p><strong>Design quality.</strong></p>
+<p>The figure uses on-brand colours and direct value labels for quick scanning; the table keeps units visible, right aligns numbers for easy comparison, and limits to the few fields needed for decisions. Link back to the question. Together, <a href="#fig-nitrate" class="quarto-xref">Figure&nbsp;1</a> and <a href="#tbl-nitrate" class="quarto-xref">Table&nbsp;1</a> show where nitrate is typically higher (Lewis Run) and when to concentrate effort (post rain windows at Arikaree), which is exactly what managers need to schedule sampling and alerts <span class="citation" data-cites="kermorvant2023">(<a href="#ref-kermorvant2023" role="doc-biblioref">Kermorvant et al. 2023</a>)</span>.</p>
+<p>The pair of visuals answers <em>when</em> and <em>where</em> to focus: persistent <strong>higher background</strong> at <strong>Lewis Run</strong> warrants ongoing nitrate checks; <strong>post-rain windows</strong> at <strong>Arikaree</strong> are the prime times for surge sampling; <strong>Caribou’s</strong> stability means routine sensors often suffice. This targeted strategy routine sensor backbone plus short, well timed nitrate measurements addresses the original problem efficiently and aligns with recent evidence that nitrate can be inferred from routine variables across contrasting rivers <span class="citation" data-cites="kermorvant2023">(<a href="#ref-kermorvant2023" role="doc-biblioref">Kermorvant et al. 2023</a>)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-nitrate" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -197,18 +203,18 @@ div.csl-indent {
 <img src="index_files/figure-html/fig-nitrate-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nitrate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Nitrate contrasts by site (median, µM).
+Figure&nbsp;1: Nitrate contrasts by site (median, mg/L as N).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Reading Figure <a href="#fig-nitrate" class="quarto-xref">Figure&nbsp;1</a>. Lewis Run’s median nitrate dwarfs the others; Caribou is low and steady; Arikaree is lower on median but more event-driven. This points to where risk is persistent and when to prioritise targeted sampling (e.g., post-rain windows).</p>
+<p><a href="#fig-nitrate" class="quarto-xref">Figure&nbsp;1</a> shows medians only (no clutter) so differences are obvious at a glance. On-brand colours separate sites, value labels sit just above points, and axes are kept simple with units shown on the y-axis. A soft background panel improves contrast with the page while black axis/tick styling maintains readability.</p>
 <div class="cell">
 <div id="tbl-nitrate" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-nitrate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Compact summary of site medians (µM), days measured, and share of total.
+Table&nbsp;1: Compact summary of site medians (mg/L as N), days measured, and share of total.
 </figcaption>
 <div aria-describedby="tbl-nitrate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -216,7 +222,7 @@ Table&nbsp;1: Compact summary of site medians (µM), days measured, and share of
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: rgba(139, 92, 246, 255) !important; background-color: rgba(253, 231, 245, 255) !important;">Site</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: rgba(139, 92, 246, 255) !important; background-color: rgba(253, 231, 245, 255) !important;">Median (µM)</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: rgba(139, 92, 246, 255) !important; background-color: rgba(253, 231, 245, 255) !important;">Median (mg/L as N)</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: rgba(139, 92, 246, 255) !important; background-color: rgba(253, 231, 245, 255) !important;">Days measured</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: rgba(139, 92, 246, 255) !important; background-color: rgba(253, 231, 245, 255) !important;">High days</th>
 <th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: rgba(139, 92, 246, 255) !important; background-color: rgba(253, 231, 245, 255) !important;">Share of total</th>
@@ -225,21 +231,21 @@ Table&nbsp;1: Compact summary of site medians (µM), days measured, and share of
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Arikaree (CO)</td>
-<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">0.077</td>
 <td style="text-align: right;">120</td>
 <td style="text-align: right;">18%</td>
 <td style="text-align: right;">2%</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Caribou (AK)</td>
-<td style="text-align: right;">28.4</td>
+<td style="text-align: right;">0.398</td>
 <td style="text-align: right;">110</td>
 <td style="text-align: right;">5%</td>
 <td style="text-align: right;">13%</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Lewis Run (VA)</td>
-<td style="text-align: right;">192.0</td>
+<td style="text-align: right;">2.689</td>
 <td style="text-align: right;">118</td>
 <td style="text-align: right;">26%</td>
 <td style="text-align: right;">85%</td>
@@ -253,12 +259,12 @@ Table&nbsp;1: Compact summary of site medians (µM), days measured, and share of
 </figure>
 </div>
 </div>
-<p>Reading Table <a href="#tbl-nitrate" class="quarto-xref">Table&nbsp;1</a>. The numbers mirror Figure <a href="#fig-nitrate" class="quarto-xref">Figure&nbsp;1</a> and support a targeted monitoring plan: keep routine sensors everywhere; add nitrate-specific effort at higher-risk sites/times.</p>
+<p><a href="#tbl-nitrate" class="quarto-xref">Table&nbsp;1</a> provides just the decision-relevant fields: median nitrate (with units), days measured (coverage), an easy “high-day” percentage, and the share of total. Numbers are right-aligned for scanning; headers include units; the caption is concise so readers know exactly what they’re looking at without hunting in the text.</p>
 <p>Why routine sensors matter (A2). In my Assignment 2 models, a small, consistent set of routine variables captured most of the signal for nitrate; once temporal structure is included, fit was extremely high. That means managers can rely on calibrated routine sensors as a cost-effective backbone, using nitrate probes for calibration and hotspots.</p>
 </section>
 <section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Short, event-driven nitrate episodes drive most risk. Use routine sensors everywhere, calibrate locally, and concentrate extra effort around likely peak windows. This communication-first summary complements the technical A2 report and aligns with literature showing nitrate can be inferred from routine variables across contrasting rivers <span class="citation" data-cites="kermorvant2023">(<a href="#ref-kermorvant2023" role="doc-biblioref">Kermorvant et al. 2023</a>)</span>.</p>
+<h2 class="anchored" data-anchor-id="conclusion">CONCLUSION</h2>
+<p>This analysis shows clear site contrasts: <strong>Lewis Run</strong> has persistently higher nitrate, while <strong>Caribou</strong> is low and <strong>Arikaree</strong> is lower on median but <strong>spikes after rainfall</strong>. The simple visuals <a href="#fig-nitrate" class="quarto-xref">Figure&nbsp;1</a> (medians in mg/L as N) and <a href="#tbl-nitrate" class="quarto-xref">Table&nbsp;1</a> (coverage, share, and “high-day” proportions)—let managers see both <strong>where</strong> nitrate is typically higher and <strong>when</strong> to intensify effort. Practically, keep routine sensors at all sites and <strong>calibrate locally</strong> to nitrate; prioritise continuous nitrate checks at <strong>Lewis Run</strong>, and schedule <strong>post-rain surge sampling</strong> at <strong>Arikaree</strong>. At <strong>Caribou</strong>, routine sensors will often suffice outside unusual events. These recommendations align with my Assignment 2 modelling (routine variables explain most nitrate variation with temporal structure) and with recent literature that supports nitrate inference from routine sensors <span class="citation" data-cites="kermorvant2023">(<a href="#ref-kermorvant2023" role="doc-biblioref">Kermorvant et al. 2023</a>)</span>. Overall, a <strong>targeted monitoring strategy</strong>—routine-sensor backbone plus short, well-timed nitrate measurements—delivers better information at lower cost and answers the original question.</p>
 <p>bibliography: references.bib<span class="citation" data-cites="kermorvant2023">(<a href="#ref-kermorvant2023" role="doc-biblioref">Kermorvant et al. 2023</a>)</span></p>
 <p><img src="thumbnail.jpg" class="img-fluid"></p>
 

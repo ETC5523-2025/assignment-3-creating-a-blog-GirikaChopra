@@ -8,7 +8,7 @@ bibliography: references.bib
 
 ## PROBLEM
 
-Excess nitrate damages river health by fuelling algal blooms and lowering dissolved oxygen, especially after storm events when runoff pulses into streams. Continuous nitrate sensors are accurate but costly to purchase, maintain, and clean; many programs therefore rely on cheaper routine sensors (conductivity, turbidity, temperature, dissolved oxygen, stage). The practical question I addressed in Assignment 2 is: can routine sensors, with local calibration, tell us enough to spot nitrate peaks and time our sampling? I also ask where nitrate tends to be higher so limited effort can be focused. This blog translates the technical Assignment2 analysis into a manager-friendly summary with one clear figure and one compact table.*  
+Excess nitrate damages river health by fuelling algal blooms and lowering dissolved oxygen, especially after storm events when runoff pulses into streams. Continuous nitrate sensors are accurate but costly to purchase, maintain, and clean; many programs therefore rely on cheaper routine sensors (conductivity, turbidity, temperature, dissolved oxygen, stage). The practical question I addressed in Assignment 2 is: can routine sensors, with local calibration, tell us enough to spot nitrate peaks and time our sampling? I also ask where nitrate tends to be higher so limited effort can be focused. This blog translates the technical Assignment2 analysis into a manager-friendly summary with one clear figure and one compact table. 
 
 ## ANALYSIS
 

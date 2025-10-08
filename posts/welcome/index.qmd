@@ -124,7 +124,6 @@ Why routine sensors matter (A2). In my Assignment 2 models, a small, consistent 
 
 This analysis shows clear site contrasts: **Lewis Run** has persistently higher nitrate, while **Caribou** is low and **Arikaree** is lower on median but **spikes after rainfall**. The simple visuals @fig-nitrate (medians in mg/L as N) and @tbl-nitrate (coverage, share, and “high-day” proportions)—let managers see both **where** nitrate is typically higher and **when** to intensify effort. Practically, keep routine sensors at all sites and **calibrate locally** to nitrate; prioritise continuous nitrate checks at **Lewis Run**, and schedule **post-rain surge sampling** at **Arikaree**. At **Caribou**, routine sensors will often suffice outside unusual events. These recommendations align with my Assignment 2 modelling (routine variables explain most nitrate variation with temporal structure) and with recent literature that supports nitrate inference from routine sensors [@kermorvant2023]. Overall, a **targeted monitoring strategy**—routine-sensor backbone plus short, well-timed nitrate measurements—delivers better information at lower cost and answers the original question.
 
-bibliography: references.bib[@kermorvant2023]
 
 
 
@@ -133,6 +132,7 @@ bibliography: references.bib[@kermorvant2023]
 
 
 
-![](thumbnail.jpg)
+
+
 
 

@@ -8,11 +8,11 @@ bibliography: references.bib
 
 ## PROBLEM
 
-Excess nitrate damages river health by fuelling algal blooms and reducing dissolved oxygen, especially after storm events when runoff pulses into streams. Continuous nitrate sensors are accurate but expensive to purchase, maintain, and clean. As a result, many monitoring programs rely on more affordable routine sensors (e.g., conductivity, turbidity, temperature, dissolved oxygen, and stage).
+Excess nitrate damages river health by fuelling algal blooms and reducing dissolved oxygen—especially after storms when runoff pulses into streams. Continuous nitrate sensors are accurate but expensive to purchase, maintain, and clean, so many monitoring programs rely on more affordable **routine sensors** (conductivity, turbidity, temperature, dissolved oxygen, and stage).
 
-The practical question I addressed in Assignment 2 is: **Can routine sensors, with local calibration, provide enough information to detect nitrate peaks and guide sampling timing? I also examined where nitrate concentrations tend to be higher, so limited monitoring efforts can be targeted more effectively.**
+The practical questions are: **Can routine sensors, with local calibration, provide enough information to detect nitrate peaks and guide sampling timing?** And **where** are nitrate concentrations typically higher so limited effort can be targeted more effectively?
 
-This blog translates the technical analysis from Assignment 2 into a manager-friendly summary, with one clear figure and one compact table.
+This post translates the technical analysis into a manager-friendly summary using one clear **figure** and one compact **table**.
 
 ## ANALYSIS
 
@@ -22,12 +22,12 @@ I analysed high-frequency stream records from three **NEON** sites: **Arikaree (
 
 **Approach** 
 
-In Assignment 2 I fitted **GAMMs** to capture smooth, nonlinear links between nitrate and routine sensors while modelling temporal autocorrelation. For this blog, I compress the findings into one visual and one table: @fig-nitrate shows typical levels (medians, mg/L as N) by site; @tbl-nitrate adds coverage (days measured), “high day” proportions, and share of the total median. The goal is quick comprehension for decision-makers rather than model details.
+I fitted **GAMMs** to capture smooth, nonlinear links between nitrate and routine sensors while modelling temporal autocorrelation. For this blog, I compress the findings into one visual and one table: @fig-nitrate shows typical levels (medians, mg/L as N) by site; @tbl-nitrate adds coverage (days measured), “high day” proportions, and share of the total median. The goal is quick comprehension for decision-makers rather than model details.
 
 
 **Findings.** 
 
-Typical nitrate differs sharply across sites: **Lewis Run** is much higher on median, **Caribou** is consistently low, and **Arikaree** is lower on median but **spiky after rainfall** (event driven behaviour). In A2, routine variables especially conductance, temperature, turbidity and stage explained most nitrate variation once temporal structure was included, indicating that calibrated routine sensors can act as reliable proxies for nitrate.
+Typical nitrate differs sharply across sites: **Lewis Run** is much higher on median, **Caribou** is consistently low, and **Arikaree** is lower on median but **spiky after rainfall** (event-driven behaviour). In my modelling, routine variables—especially conductance, temperature, turbidity, and stage—explained most nitrate variation once temporal structure was included, indicating that calibrated routine sensors can act as reliable proxies.
 
 
 **Design quality.** 
@@ -122,14 +122,13 @@ if (requireNamespace("kableExtra", quietly = TRUE)) {
 
 @tbl-nitrate provides just the decision-relevant fields: median nitrate (with units), days measured (coverage), an easy “high-day” percentage, and the share of total. Numbers are right-aligned for scanning; headers include units; the caption is concise so readers know exactly what they’re looking at without hunting in the text.
 
-Why routine sensors matter (A2). In my Assignment 2 models, a small, consistent set of routine variables captured most of the signal for nitrate; once temporal structure is included, fit was extremely high. That means managers can rely on calibrated routine sensors as a cost-effective backbone, using nitrate probes for calibration and hotspots.
-
 ## CONCLUSION
 
-This analysis shows clear site contrasts: **Lewis Run** has persistently higher nitrate, while **Caribou** is low and **Arikaree** is lower on median but **spikes after rainfall**. The simple visuals @fig-nitrate (medians in mg/L as N) and @tbl-nitrate (coverage, share, and “high-day” proportions)—let managers see both **where** nitrate is typically higher and **when** to intensify effort. Practically, keep routine sensors at all sites and **calibrate locally** to nitrate; prioritise continuous nitrate checks at **Lewis Run**, and schedule **post-rain surge sampling** at **Arikaree**. At **Caribou**, routine sensors will often suffice outside unusual events. These recommendations align with my Assignment 2 modelling (routine variables explain most nitrate variation with temporal structure) and with recent literature that supports nitrate inference from routine sensors [@kermorvant2023]. Overall, a **targeted monitoring strategy**—routine-sensor backbone plus short, well-timed nitrate measurements—delivers better information at lower cost and answers the original question.
+This analysis shows clear site contrasts: Lewis Run has persistently higher nitrate, Caribou is low, and Arikaree is lower on median but spikes after rainfall. The visuals—Figure @fig-nitrate (medians in mg/L as N) and Table @tbl-nitrate (coverage, share, and “high-day” proportions)—let managers see both where nitrate is typically higher and when to intensify effort. Practically, keep routine sensors at all sites and calibrate locally to nitrate; prioritise continuous nitrate checks at Lewis Run, and schedule post-rain surge sampling at Arikaree. At Caribou, routine sensors will often suffice outside unusual events. These recommendations align with my modelling (routine variables explain most nitrate variation with temporal structure) and with recent literature that supports nitrate inference from routine sensors [@kermorvant2023]. Overall, a targeted monitoring strategy routine sensor backbone plus short, well-timed nitrate measurements—delivers better information at lower cost and answers the original question.
 
 
 
+Publishing my website using GitHub pages. 
 
  <https://etc5523-2025.github.io/assignment-3-creating-a-blog-GirikaChopra/>
 

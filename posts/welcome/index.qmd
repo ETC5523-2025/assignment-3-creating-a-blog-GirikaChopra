@@ -4,6 +4,7 @@ author: "Girika"
 date: today
 categories: [blog]
 bibliography: references.bib
+link-citations: true
 ---
 
 ## PROBLEM
@@ -124,14 +125,16 @@ if (requireNamespace("kableExtra", quietly = TRUE)) {
 
 ## CONCLUSION
 
-This analysis shows clear site contrasts: Lewis Run has persistently higher nitrate, Caribou is low, and Arikaree is lower on median but spikes after rainfall. The visuals—Figure @fig-nitrate (medians in mg/L as N) and Table @tbl-nitrate (coverage, share, and “high-day” proportions)—let managers see both where nitrate is typically higher and when to intensify effort. Practically, keep routine sensors at all sites and calibrate locally to nitrate; prioritise continuous nitrate checks at Lewis Run, and schedule post-rain surge sampling at Arikaree. At Caribou, routine sensors will often suffice outside unusual events. These recommendations align with my modelling (routine variables explain most nitrate variation with temporal structure) and with recent literature that supports nitrate inference from routine sensors [@kermorvant2023]. Overall, a targeted monitoring strategy routine sensor backbone plus short, well-timed nitrate measurements—delivers better information at lower cost and answers the original question.
+This analysis shows clear site contrasts: Lewis Run has persistently higher nitrate, Caribou is low, and Arikaree is lower on median but spikes after rainfall. The visuals Figure @fig-nitrate (medians in mg/L as N) and Table @tbl-nitrate (coverage, share, and “high-day” proportions) let managers see both where nitrate is typically higher and when to intensify effort. Practically, keep routine sensors at all sites and calibrate locally to nitrate; prioritise continuous nitrate checks at Lewis Run, and schedule post-rain surge sampling at Arikaree. At Caribou, routine sensors will often suffice outside unusual events. These recommendations align with my modelling (routine variables explain most nitrate variation with temporal structure) and with recent literature that supports nitrate inference from routine sensors [@kermorvant2023]. Overall, a targeted monitoring strategy routine sensor backbone plus short, well-timed nitrate measurements delivers better information at lower cost and answers the original question.
+
+See the palette gallery for options [@rcharts-colors].
+
+See implementation notes in the AI discussion [@chatgpt-share].
 
 
+## GitHub pages 
 
-Publishing my website using GitHub pages. 
-
- <https://etc5523-2025.github.io/assignment-3-creating-a-blog-GirikaChopra/>
-
+<https://etc5523-2025.github.io/assignment-3-creating-a-blog-GirikaChopra/>
 
 
 

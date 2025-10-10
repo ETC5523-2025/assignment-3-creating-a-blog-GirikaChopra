@@ -10,13 +10,15 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/girika-3641801b8/
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/week.days.and.week.ends
 ---
 
-Hi, I am Girika a **Master of Business Analytics** student at Monash University.
-I am passionate about turning data into stories people can actually understand. I work with R, Quarto, Excel, GitHub and the tidyverse, translating technical analyses into clear narratives that bring numbers to life. This blog transforms my Assignment 2 nitrate analysis into an accessible post for broader audiences , because good insights deserve to be shared, not hidden in code chunks.
+Hi, I’m Girika, a Master of Business Analytics student at Monash University. I’m passionate about turning data into stories people can actually understand. I work with R, Quarto, Excel, GitHub, and the tidyverse, translating technical analyses into clear narratives that bring numbers to life. This blog turns a nitrate analysis into an accessible post for broader audiences—because good insights deserve to be shared, not hidden in code chunks.
 
-I am especially interested in data communication, uncertainty, reproducibility and visualization. I love working with ggplot2 — it’s colourful, creative and makes every chart feel like a little celebration of data. My workflow leans on version control, literate programming, and clean figure and table design with captions and cross-references to keep everything transparent and reproducible.
+I am especially interested in data communication, uncertainty, reproducibility and visualization. I love working with ggplot2 it’s colourful, creative and makes every chart feel like a little celebration of data. My workflow leans on version control, literate programming, and clean figure and table design with captions and cross-references to keep everything transparent and reproducible.
 
-Beyond the analytics world, I’m a big believer in balance. I love badminton and play almost every Sunday, often followed by a peaceful walk through parks and nature around Melbourne. I’m also a huge dog lover and I can’t wait to have my own pup here and spend weekends at dog events and meet-ups.
+Beyond the analytics world, I’m a big believer in balance. I love badminton and play almost every Sunday, often followed by a peaceful walk through parks and nature around Melbourne. I’m also a huge dog lover and I can’t wait to have my own pup here and spend weekends at dog events and meet-ups. On the side, I explore photography and create simple, feel-good content for fun.
 
-I currently work part-time as an Associate, supporting prospective students with application preparation and documentation, maintaining accurate CRM records, coordinating timelines between students, institutions, and internal teams, and contributing to data-driven insights for process improvements.I am an enthusiastic learner, curious explorer, and someone who truly enjoys the blend of logic, creativity, and a bit of chaos that analytics brings.
+I currently work part- time as an Associate, supporting prospective students with application preparation and documentation, maintaining accurate CRM records, coordinating timelines between students, institutions, and internal teams, and contributing to data-driven insights for process improvements.I am an enthusiastic learner, curious explorer, and someone who truly enjoys the blend of logic, creativity, and a bit of chaos that analytics brings.

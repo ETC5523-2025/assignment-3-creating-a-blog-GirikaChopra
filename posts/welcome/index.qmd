@@ -2,13 +2,17 @@
 title: "When Do Nitrate Levels Spike?"
 author: "Girika"
 date: today
-categories: [news]
+categories: [blog]
 bibliography: references.bib
 ---
 
 ## PROBLEM
 
-Excess nitrate damages river health by fuelling algal blooms and lowering dissolved oxygen, especially after storm events when runoff pulses into streams. Continuous nitrate sensors are accurate but costly to purchase, maintain, and clean; many programs therefore rely on cheaper routine sensors (conductivity, turbidity, temperature, dissolved oxygen, stage). The practical question I addressed in Assignment 2 is: can routine sensors, with local calibration, tell us enough to spot nitrate peaks and time our sampling? I also ask where nitrate tends to be higher so limited effort can be focused. This blog translates the technical Assignment2 analysis into a manager-friendly summary with one clear figure and one compact table. 
+Excess nitrate damages river health by fuelling algal blooms and reducing dissolved oxygen, especially after storm events when runoff pulses into streams. Continuous nitrate sensors are accurate but expensive to purchase, maintain, and clean. As a result, many monitoring programs rely on more affordable routine sensors (e.g., conductivity, turbidity, temperature, dissolved oxygen, and stage).
+
+The practical question I addressed in Assignment 2 is: **Can routine sensors, with local calibration, provide enough information to detect nitrate peaks and guide sampling timing? I also examined where nitrate concentrations tend to be higher, so limited monitoring efforts can be targeted more effectively.**
+
+This blog translates the technical analysis from Assignment 2 into a manager-friendly summary, with one clear figure and one compact table.
 
 ## ANALYSIS
 
@@ -127,7 +131,7 @@ This analysis shows clear site contrasts: **Lewis Run** has persistently higher 
 
 
 
-
+ <https://etc5523-2025.github.io/assignment-3-creating-a-blog-GirikaChopra/>
 
 
 

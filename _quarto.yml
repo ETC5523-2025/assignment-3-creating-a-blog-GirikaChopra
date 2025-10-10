@@ -21,5 +21,9 @@ format:
       light: zephyr
       dark: vapor
     css: styles.css
-
+    toc: true
+    toc-title: "On this page"
+    toc-location: right
+    toc-depth: 3
+    number-sections: false
 

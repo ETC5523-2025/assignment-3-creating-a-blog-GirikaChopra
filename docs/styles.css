@@ -1,11 +1,11 @@
 
 /*  Palette  */
 :root{
-  --brand: #8b5cf6;   /* violet */
-  --brand-2: #fde7f5; /* blush wash */
-  --ink: #1f1636;     /* deep eggplant text */
-  --muted: #6b5e7a;   /* muted plum */
-  --ring: #f0abfc;    /* orchid focus */
+  --brand: #8b5cf6;
+  --brand-2: #fde7f5;
+  --ink: #1f1636;
+  --muted: #6b5e7a;
+  --ring: #f0abfc;
 }
 
 /*  Global type & spacing  */
